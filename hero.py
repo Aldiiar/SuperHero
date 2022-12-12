@@ -37,10 +37,13 @@ print(f'{len(hero)}\n')
 class Hero2(SuperHero):
     speedster = 'lightning'
 
-    def __init__(self, name, nickname, superpower, health_points, catchphrase, fly, damage):
+
+    def __init__(self, name, nickname, superpower, health_points, catchphrase,
+                 fly=False, damage=False):
         SuperHero.__init__(self, name, nickname, superpower, health_points, catchphrase)
         self.fly = fly
         self.damage = damage
+
         
     def hp(self):
         self.health_points **= 2
@@ -53,7 +56,7 @@ class Hero2(SuperHero):
 
 
 hero2 = Hero2('Barry Allen', 'Flash', 'super speed', 20,
-              'Меня зовут Барри Аллен, и я самый быстрый человек на Земле', False, False)
+              'Меня зовут Барри Аллен, и я самый быстрый человек на Земле')
 
 hero2.namehero()
 hero2.hp()
@@ -70,7 +73,7 @@ class Hero3(Hero2):
     levitation = 'levitation'
 
 hero3 = Hero3('Clark', 'Superman', 'laser sight', 100000,
-              'Мой грех? Спасение мира', False, False)
+              'Мой грех? Спасение мира')
 
 hero3.namehero()
 hero3.hp()
@@ -93,7 +96,7 @@ class Villain(Hero2):
 
 
 villain = Villain('Ulquiorra Cifer', 'Arrankar', 'Gran ray sero', 4,
-              'Я понял: её рука, тянущаяся ко мне — и есть душа', False, False)
+              'Я понял: её рука, тянущаяся ко мне — и есть душа')
 
 
 villain.namehero()
@@ -104,8 +107,3 @@ print(f'{villain}\n'
       f'Fly: {villain.fly}\n'
       f'Damage: {villain.damage}\n'
       f'{villain.phrase()}\n')
-
-
-
-
-
