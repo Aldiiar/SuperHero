@@ -43,7 +43,6 @@ class Hero2(SuperHero):
         SuperHero.__init__(self, name, nickname, superpower, health_points, catchphrase)
         self.fly = fly
         self.damage = damage
-
         
     def hp(self):
         self.health_points **= 2
@@ -92,7 +91,7 @@ class Villain(Hero2):
     def gen_x(self):...
 
     def crit(self):
-        self.damage **= 2
+       print(f'Damage: {self ** 2}')
 
 
 villain = Villain('Ulquiorra Cifer', 'Arrankar', 'Gran ray sero', 4,
@@ -102,8 +101,7 @@ villain = Villain('Ulquiorra Cifer', 'Arrankar', 'Gran ray sero', 4,
 villain.namehero()
 villain.hp()
 villain.fly1()
-villain.crit()
 print(f'{villain}\n'
-      f'Fly: {villain.fly}\n'
-      f'Damage: {villain.damage}\n'
-      f'{villain.phrase()}\n')
+      f'Fly: {villain.fly}')
+Villain.crit(hero2.damage)
+print(villain.phrase())
